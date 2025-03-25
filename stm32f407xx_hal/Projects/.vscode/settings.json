@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "usart.h": "c",
+        "stm32f4xx.h": "c",
+        "stdarg.h": "c",
+        "gpio.h": "c",
+        "main.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "string.h": "c"
+    },
+    "git.ignoreLimitWarning": true
+}
