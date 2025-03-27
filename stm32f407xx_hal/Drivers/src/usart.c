@@ -7,21 +7,7 @@ DMA_HandleTypeDef  DBG_USART_DMA_Handler;
 uint8_t send_buff[SENDBUFF_SIZE];
 uint8_t dma_transfer_in_progress;    // DMA 传输中标志
 
-/**
- * @brief  This function is executed in case of error occurrence.
- * @param  None
- * @retval None
- */
-static void Error_Handler(void)
-{
-    /* User may add here some code to deal with this error */
-    while(1)
-    {
-        LED0(ON);
-    }
-}
-
-void HAL_UART_MspInit(UART_HandleTypeDef *huart)
+void UART_GPIO_Init(UART_HandleTypeDef *huart)
 {
     GPIO_InitTypeDef GPIO_InitStruct;
 
@@ -96,32 +82,3 @@ void DBG_USART_Init(void)
     DBG_USART_DMA_Config();
 }
 
-void debug(const char *fmt, ...)
-{
-    char buffer[SENDBUFF_SIZE];
-    int  size = 0;
-
-    va_list args;
-    va_start(args, fmt);
-    vsnprintf(buffer, SENDBUFF_SIZE, fmt, args);
-    va_end(args);
-
-#if DMA_ENABLE
-    if(HAL_UART_Transmit_DMA(&DBG_USART_Handler, (uint8_t *)buffer, strlen(buffer)) != HAL_OK)
-    {
-        Error_Handler();
-    }
-
-#else
-    HAL_UART_Transmit(&DBG_USART_Handler, (uint8_t *)buffer, strlen(buffer), 0xFFFF);
-#endif
-}
-
-void DBG_USART_IRQHandler(void)
-{
-    uint8_t data;
-    if(__HAL_USART_GET_FLAG(&DBG_USART_Handler, USART_FLAG_RXNE) != RESET)
-    {
-        data = READ_REG(DBG_USART_Handler.Instance->DR);
-    }
-}

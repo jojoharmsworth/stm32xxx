@@ -38,6 +38,7 @@
 #define DBG_USART_DMA_IRQn             DMA2_Stream7_IRQn
 #define DBG_USART_DMA_IRQHandler       DMA2_Stream7_IRQHandler
 
+void UART_GPIO_Init(UART_HandleTypeDef *huart);
 void DBG_USART_Init(void);
 void debug(const char *fmt, ...);
 

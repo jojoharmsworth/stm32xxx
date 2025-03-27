@@ -23,8 +23,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 #include "delay.h"
-#include "usart.h"
+#include "dbg_usart.h"
 #include "gpio.h"
+#include "sys.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
