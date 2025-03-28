@@ -3,8 +3,7 @@
 static TaskHandle_t AppTaskCreate_Handel;
 
 task_dynamic_t Tasks[] = {
-    // { ADC_Task, "ADC_Task", ADC_TASK_STACK_SIZE, NULL, ADC_TASK_PRIORITY, NULL },
-    { UsartTask, "USART_Task", UART_TASK_STACK_SIZE, NULL, UART_TASK_PRIORITY, NULL }
+    { PrintTask, "Print_Task", PRINT_TASK_STACK_SIZE, NULL, PRINT_TASK_PRIORITY, NULL }
 };
 
 timer_t Timers[] = {

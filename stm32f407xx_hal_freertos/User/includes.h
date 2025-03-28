@@ -6,7 +6,9 @@
 #include <stdarg.h>
 #include <string.h>
 
+#include "sys.h"
 #include "delay.h"
+#include "dbg_usart.h"
 #include "usart.h"
 #include "gpio.h"
 #include "ringbuffer.h"
@@ -19,7 +21,7 @@
 #include "event_groups.h"
 
 #include "task_init.h"
-#include "task_uart.h"
+#include "task_print.h"
 #include "xtimer.h"
 
 #endif /* __INCLUDES_H__ */

@@ -16,25 +16,25 @@
  ******************************************************************************
  */
 
-/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-static void BSP_Init(void)
-{
-    HAL_Init();
-    SystemClock_Config();
-    GPIO_Config();
-    DBG_USART_Init();
-}
 
 int main(void)
 {
-    BSP_Init();
+    HAL_Init();
+    SystemClock_Config();
+    delay_init(168); /* —” ±≥ı ºªØ */
 
-    debug("starting...\r\n");
+    GPIO_Config();
+    dbg_usart_init(115200);
+
+    printf("Hello World!\r\n");
     Task_Init();
 
-    while(1);
+    /* Infinite loop */
+    while(1)
+    {
+    }
 }
 
 #ifdef USE_FULL_ASSERT
@@ -57,4 +57,3 @@ void assert_failed(uint8_t *file, uint32_t line)
     }
 }
 #endif
-
