@@ -21,11 +21,7 @@
 #define __MAIN_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx_hal.h"
-#include "delay.h"
-#include "dbg_usart.h"
-#include "gpio.h"
-#include "sys.h"
+#include "init.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/

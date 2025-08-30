@@ -21,12 +21,7 @@
 
 int main(void)
 {
-    HAL_Init();
-    SystemClock_Config();
-    delay_init(168); /* —” ±≥ı ºªØ */
-
-    gpio_config();
-    dbg_usart_init(115200);
+    bsp_init();
 
     printf("Hello World!\r\n");
 

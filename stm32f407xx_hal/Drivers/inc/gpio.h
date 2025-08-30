@@ -6,7 +6,7 @@
 #define ON  GPIO_PIN_RESET
 #define OFF GPIO_PIN_SET
 
-// Êä³ö·´×ª×´Ì¬
+// ????¡¤?¡Á?¡Á???
 #define digitalToggle(p, i) \
     {                       \
         (p->ODR) ^= (i);    \

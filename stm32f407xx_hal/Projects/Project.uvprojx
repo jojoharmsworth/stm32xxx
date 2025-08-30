@@ -341,7 +341,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,USE_STM32F4_DISCO</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\STM32F4xx_HAL_Driver\Inc;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\User;..\Drivers\inc;..\Libraries\SYSTEM\sys;..\Libraries\SYSTEM\delay;..\Libraries\SYSTEM\usart</IncludePath>
+              <IncludePath>..\Libraries\STM32F4xx_HAL_Driver\Inc;..\Libraries\CMSIS\Device\ST\STM32F4xx\Include;..\User;..\Drivers;..\Drivers\inc;..\Libraries\SYSTEM\sys;..\Libraries\SYSTEM\delay;..\Libraries\SYSTEM\usart</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -590,6 +590,11 @@
         <Group>
           <GroupName>User</GroupName>
           <Files>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\init.c</FilePath>
+            </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
